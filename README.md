@@ -91,7 +91,7 @@ YouTube works as well, the positioning just needs to be finetuned a bit more to 
 
 If you've never noticed, in the p5 sketch, there's an arrow beside 'sketch.js' text where we can access the html and css. 
 
-![p5 Layout](./p5_sketch_layout.png)
+![p5 Layout](./assets/p5_sketch_layout.png)
 
 So we just drop the above iFrame into the html. Also we can minimize (or even delete) the JavaScript sketch. 
 
@@ -163,3 +163,8 @@ Usually our phones work the other way, utilizing a 'tag' in the phone itself, an
 - Server communicates to the website that the guest is on, and triggers something to happen
 
 This would take a long time to demo, so this will be a specialty case. 
+
+
+## Experiments
+
+[Image Tracking]('./image-tracking.html)
