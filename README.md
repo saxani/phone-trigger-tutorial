@@ -1,4 +1,4 @@
-#Communication with physical space and our phones
+# Communication with physical space and our phones
 
 
 As we start building our final projects, a popular immersive technique is combining the 'real world' with some digital content on a guest's smartphone. 
@@ -9,7 +9,7 @@ We will start with using p5 and the editor, but eventually extract the concepts 
 
 The most challenging aspect of this will be hosting your code for guests to access on their phones. 
 
-##p5 editor
+## p5 editor
 
 Launch the [p5 Editor](https://editor.p5js.org/).
 
@@ -130,7 +130,7 @@ function draw() {
 Now you have many options! If you need to create a multi-page website, that could get difficult with p5 sketches. 
 
 
-##AR.js
+## AR.js
 
 Augmented reality is getting easier to incorporate on the web. (AR.js)[https://ar-js-org.github.io/AR.js-Docs/] is a pretty simple way to start making augmented reality work on the web. 
 
@@ -145,7 +145,7 @@ And the three.js library, which AR.js utilizes:
 
 
 
-##NFC
+## NFC
 
 NFC (Near Field Communiction) is built on RFID technology. It's the technology we use when we pay for something with our phone, bank cards, etc. 
 
