@@ -15,9 +15,7 @@
                     this.vid = document.querySelector("#vid");
     
                     marker.addEventListener('markerFound', function () {
-                      this.vid.addEventListener('click', () => {
-                        videoClick();
-                      });
+                      this.vid.play();
                     }.bind(this));
     
                     marker.addEventListener('markerLost', function() {
@@ -27,12 +25,6 @@
                 }
             });
         };
-
-        function videoClick() {
-          console.log('video has been pressed');
-          const vid = document.querySelector("#vid");
-          vid.play();
-        }
     </script>
     
     <style>

@@ -3,11 +3,12 @@
 
 As we start building our final projects, a popular immersive technique is combining the 'real world' with some digital content on a guest's smartphone. 
 
-We can elegantly prompt a phone interaction with different real life triggers. We'll be quickly overviewing how to do this with: QR codes, Image markers, NFC (near field communication) tags.
+We can elegantly prompt a phone interaction with different 'real world' triggers. We'll be quickly overviewing how to do this 
+(sort of) with: QR codes, Image markers, NFC (near field communication) tags.
 
-We will start with using p5 and the editor, but eventually extract the concepts from p5 and locally code. 
+We will start with using p5 and the editor, but eventually extract the concepts from p5 and code on our local computers. 
 
-The most challenging aspect of this will be hosting your code for guests to access on their phones. 
+The most challenging aspect of this will be hosting your code for guests to access on their phones. It need to be accessible for them over a server, and for many things over the web, that server needs to be secure (https instead of http). For this tutorial, I'm making use of Github pages. 
 
 ## p5 editor
 
@@ -29,7 +30,7 @@ function draw() {
 }
 ```
 
-Now let's look at an example of using a QR code with the p5 editor, made by Tom Igoe. The JavaScript documentation is [here](https://github.com/kazuhikoarase/qrcode-generator/tree/master/js).
+Now let's [look at an example](https://editor.p5js.org/tigoe/sketches/-BEzcjfMF) of using a QR code with the p5 editor, made by Tom Igoe. The JavaScript documentation is [here](https://github.com/kazuhikoarase/qrcode-generator/tree/master/js).
 
 ```
 /*
@@ -79,7 +80,11 @@ function draw() {
 ```
 
 
-Now you an easily just print off the created QR code, and use it in your physical project. We likely won't just load an external website though, we'll want to direct guests to some content we've created. Creating your own website would be better for this, but an easy way to do it that doesn't delve into server side programming is using p5. 
+Now you an easily just print off the created QR code, and use it in your physical project. 
+
+You don't really even need p5 or code to generate a QR code. Free sites like [QR Code Monkey](https://www.qrcode-monkey.com/) will do it for you. 
+
+We likely won't just load an external website though, we'll want to direct guests to some content we've created. Creating your own website would be better for this, but an easy way to do it that doesn't delve into server side programming is using p5. 
 
 Let's put [this](https://vimeo.com/253989945) video in a standard p5 sketch. The iFrame embed we'll use is this: 
 
@@ -89,6 +94,8 @@ Let's put [this](https://vimeo.com/253989945) video in a standard p5 sketch. The
 
 YouTube works as well, the positioning just needs to be finetuned a bit more to make it responsive. 
 
+Let's make a new p5 sketch for this. 
+
 If you've never noticed, in the p5 sketch, there's an arrow beside 'sketch.js' text where we can access the html and css. 
 
 ![p5 Layout](./assets/p5_sketch_layout.png)
@@ -97,16 +104,13 @@ So we just drop the above iFrame into the html. Also we can minimize (or even de
 
 We save this sketch, note the URL, and now use that url in the QR code sketch for the variable 'inputString'. 
 
-So this is for playing a video that's hosted elsewhere, which would be the recommended method for videos because they're large (and p5 probably has a file size max). You can easily do the same thing with images that are already hoste online. If they are not, you can upload files from the same tab as when you find the html and css files. 
+So this is for playing a video that's hosted elsewhere, which would be the recommended method for videos because they're large (and p5 probably has a file size max). You can easily do the same thing with images that are already hosted online. If they are not, you can upload files from the same tab as when you find the html and css files. 
 
 
-Click on the arrow beside 'Sketch Files'
+- Click on the arrow beside 'Sketch Files'
+- And click upload file. 
+- From there, we can draw the image on to our sketch.
 
-
-And click upload file. 
-
-
-From there, we can draw the image on to our sketch.
 
 ```
 let puppy;
@@ -127,21 +131,32 @@ function draw() {
 }
 ```
 
-Now you have many options! If you need to create a multi-page website, that could get difficult with p5 sketches. 
+Now you have many options! If you need to create a multi-page website, that could get difficult with p5 sketches. Github pages would be easier for that, but, you sort of need to know how to use Github. A wordpress or squarespace would also work, as you only need to have a unique URL where the content is, and note that in thr QR code. 
 
 
 ## AR.js
 
-Augmented reality is getting easier to incorporate on the web. (AR.js)[https://ar-js-org.github.io/AR.js-Docs/] is a pretty simple way to start making augmented reality work on the web. 
+Augmented reality is getting more prevalent and easier to use. (AR.js)[https://ar-js-org.github.io/AR.js-Docs/] is a web library to use AR right in your mobile browser. In theory, it's really great! But in practice, it's going to be really difficult to make work on any guest's phone. 
 
-Image tracking could be utilized in our projects, but I'm not going to cover that now. What we're going to look at is marker tracking, specifically 'patterns', which are more interesting than boring QR codes, Hiros, and barcodes. 
+The library is good for markers (like QR codes or alternatives) and image tracking. 
 
-We'll need to import the Marker tracking library:
-`<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js">`
+Though it would be nice to use p5 with this, I'm not sure it's possible currently due to integration and security issues. For now, we're going to be using plain old HTML and JS. 
 
-And the three.js library, which AR.js utilizes:
-`<script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar.js">`
+We're going to need to access the Github pages I've created on our phones, and learning from this tutorial, I've generated a QR code for this URL for your phones. How meta!
 
+![QR code for this page](./assets/qr-code.png)
+
+### Marker
+
+I have adapted the example for using a marker and it's viewable [here](https://saxani.github.io/phone-trigger-tutorial/marker.html)
+
+The code is [here](https://github.com/saxani/phone-trigger-tutorial/blob/main/marker.html).
+
+Assuming you can load the page on your phone, just scan this Hiro image and it should overlay a 3D model. 
+
+![Hiro image](./assets/hiro.png)
+
+The advantage of this library is we can use AR over semi-boring real life triggers, rather than just link to a URL. 
 
 
 
