@@ -170,6 +170,22 @@ Instead of a 3D model, we can add shapes, but replacing the 'entity' with this c
 </a-entity>
 ```
 
+### Image Tracking
+
+The most fun option (but most difficult) is using custom images as markers. 
+
+[Here](https://saxani.github.io/phone-trigger-tutorial/image-tracking.html) is a customized example of the one on the documentation page that should use this image as a marker:
+
+![pinball](./assets/pinball.jpg)
+
+The code is [here](https://github.com/saxani/phone-trigger-tutorial/blob/main/image-tracking.html).
+
+Big problem: It is super memory intensive, and as I tried to customize this, I kept getting memory errors. 
+
+
+### Overly
+
+As I was searching for easier ways to integrate image tracking, I found [this app](https://overlyapp.com/). It's really simple to use, and no code. Problem: In the free version, you can only overlay a video over an image. It's still a pretty seamless interaction, except you'd need to have guests use the Overly app. 
 
 
 ## NFC
@@ -190,8 +206,3 @@ Usually our phones work the other way, utilizing a 'tag' in the phone itself, an
 - Server communicates to the website that the guest is on, and triggers something to happen
 
 This would take a long time to demo, so this will be a specialty case. 
-
-
-## Experiments
-
-[Image Tracking](https://saxani.github.io/phone-trigger-tutorial/image-tracking.html)
