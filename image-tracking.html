@@ -15,7 +15,9 @@
                     this.vid = document.querySelector("#vid");
     
                     marker.addEventListener('markerFound', function () {
+                      this.vid.addEventListener('click', () => {
                         this.vid.play();
+                      });
                     }.bind(this));
     
                     marker.addEventListener('markerLost', function() {
