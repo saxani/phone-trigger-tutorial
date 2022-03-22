@@ -158,6 +158,18 @@ Assuming you can load the page on your phone, just scan this Hiro image and it s
 
 The advantage of this library is we can use AR over semi-boring real life triggers, rather than just link to a URL. 
 
+Instead of a 3D model, we can add shapes, but replacing the 'entity' with this code:
+
+```
+<a-entity geometry="primitive: sphere; radius: 1.5"
+  light="type: ambient; color: white;"
+  material="color: white;"
+  position="0 0 0"
+  scale="0.25 0.25 0.25"
+  >
+</a-entity>
+```
+
 
 
 ## NFC
