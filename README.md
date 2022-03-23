@@ -140,6 +140,8 @@ Augmented reality is getting more prevalent and easier to use. (AR.js)[https://a
 
 The library is good for markers (like QR codes or alternatives) and image tracking. 
 
+The library is built on top of an AR/VR framework called [Aframe](https://aframe.io/). If you want to customize an experience from the code examples, you'll need to know the different elements in this library. 
+
 Though it would be nice to use p5 with this, I'm not sure it's possible currently due to integration and security issues. For now, we're going to be using plain old HTML and JS. 
 
 We're going to need to access the Github pages I've created on our phones, and learning from this tutorial, I've generated a QR code for this URL for your phones. How meta!
